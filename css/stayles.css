@@ -21,36 +21,115 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-.list {
-    list-style: none;
-        }
-
-.link {
-    text-decoration: none;
+h2,
+h3, 
+p {
+    margin: 0;
 }
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+.container { 
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+    outline: 3px solid tomato;
+}
+
+.section {
+    padding-top: 94px;
+    padding-bottom: 94px;
+   }
+
+.section.no-padding {
+    padding-top: 0px;
+    padding-bottom: 0pt;
+    }
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    }
     
+    /* Приховування заголовків */
+.visually-hidden { 
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    margin: -1px; 
+    border: 0; 
+    padding: 0; 
+    white-space: nowrap; 
+    clip-path: inset(100%); 
+    clip: rect(0 0 0 0); 
+    overflow: hidden; 
+    } 
+
+.main-header{
+    display: flex;
+   
+}
 
 /* Оформлення логотипу */
 .logo {
+    margin-right: 93px;
+
     color: var(--style-blue);
     font-family: Raleway, sans-serif;
     font-weight: 700;
     font-size: 26px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    text-decoration: none;
     }
+
 .logo-black {
     color: var(--style-black);
     }
+
 .logo-white {
     color: var(--style-fon-white);
     }
 
-.site-nav, .auth-nav {
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav {
+    display: flex;
+
     font-weight: 500;
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+     }
+
+.site-nav .item {
+    margin-right: 50px;
+     }
+
+.site-nav .item:last-child {
+    margin-right: 0px;}
+
+        
+.auth-nav {
+    display: flex;
+    margin-left: auto;
+
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    }
+
+    .auth-nav .item + .item {
+    margin-left: 50px;
     }
 
 .site-nav .link-site.current {
@@ -58,11 +137,21 @@ body {
     }
 
 .link-site {
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
     color: var(--style-basis);
+    text-decoration: none;
     }
    
 .link-auth {
+    display: block;
+    padding-top: 30px;
+    padding-bottom: 30px;
+
     color: var(--style-text);
+    text-decoration: none;
     }
 
 
@@ -70,6 +159,32 @@ body {
 .link-auth:hover, .link-auth:focus {
     color: var(--style-blue);
     }
+
+
+    /* Оформленння кнопок */
+
+.button-title {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 200px;
+    padding: 10px 32px;
+    min-width: 200px;
+
+    color: var(--style-fon-white);
+    background:var(--style-blue);
+
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    text-align: center;
+}
+
+.button-title:hover, .button-title:focus  {
+background-color: var(--style-button-secondary);
+}
 
 .button-one {
     color: var(--style-fon-white);
@@ -96,20 +211,6 @@ body {
     color: var(--style-fon-white);
    }
 
-.button-title {
-color: var(--style-fon-white);
-background:var(--style-blue);
-font-family: Roboto, sans-serif;
-font-weight: 700;
-font-size: 16px;
-line-height: 1.88;
-letter-spacing: 0.06em;
-}
-
-.button-title:hover, .button-title:focus  {
-background-color: var(--style-button-secondary);
-}
-
 /* Заголовок */
 
 .title {
@@ -118,7 +219,11 @@ background-color: var(--style-button-secondary);
     }   
 
 .title-name{
+    margin-top: 0;
+    margin-bottom: 30px;
+
     color: var(--style-fon-white);
+
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
@@ -128,8 +233,21 @@ background-color: var(--style-button-secondary);
 
 
 /* Опис */
+.descriptions {
+    display: flex;
+}
+
+.descriptions-items {
+    margin-right: 30px;
+}
+
+.descriptions-items:last-child {
+    margin-right: 0;
+}
 
 .descriptions-name {
+    margin-bottom: 10px;
+
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
@@ -148,12 +266,16 @@ background-color: var(--style-button-secondary);
 
 /* Чим ми займаємось */
 /* Команда */
+
+
 .team{
     background-color: var(--style-button);
     }
 
 .occupation-name,
 .our-team {
+    margin-bottom:50px;
+
     font-weight: 700;
     font-size: 36px;
     line-height: 1.17;
@@ -215,6 +337,7 @@ background-color: var(--style-button-secondary);
     line-height: 1.71;
     letter-spacing: 0.03em;
     font-style:normal;
+    text-decoration: none;
     }
 
 .adrs-auth:hover,.adrs-auth:focus {

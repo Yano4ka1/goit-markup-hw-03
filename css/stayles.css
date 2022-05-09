@@ -34,6 +34,8 @@ p {
     width: 1200px;
     padding-left: 15px;
     padding-right: 15px;
+
+    outline: 1px solid red;
    }
 
 .section {
@@ -262,12 +264,8 @@ background-color: var(--style-button-secondary);
     display: flex;
 }
 
-.descriptions-items {
+.descriptions-items:not(:last-child) {
     margin-right: 30px;
-}
-
-.descriptions-items:last-child {
-    margin-right: 0;
 }
 
 .descriptions-name {
@@ -421,13 +419,9 @@ flex-wrap: wrap;
     font-style:normal;
     }
 
-.adrs-list {
+.adrs-list:not(:last-child) {
     margin-bottom: 9px;
 }
-
-.adrs-list:last-child {
-    margin-bottom: 0px;
-    }
     
 
 .adrs-auth {
